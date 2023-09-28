@@ -56,6 +56,10 @@ public class ParkingLotView {
         calculateButton = new Button("calculate");
     }
 
+    public void setActionTarget(Text actionTarget) {
+        this.actionTarget = actionTarget;
+    }
+
     public GridPane initialiseLayout() {
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -101,6 +105,7 @@ public class ParkingLotView {
         grid.add(minuteOptions2, 3,2);
 
         grid.add(calculateButton, 3, 3);
+        grid.add(actionTarget,0,4);
 
         return grid;
     }
@@ -154,12 +159,12 @@ public class ParkingLotView {
 
 
 
-    public TextField getUserEntryDateTextField() {
-        return userEntryDateTextField;
+    public String getUserEntryDateTextField() {
+        return userEntryDateTextField.getText();
     }
 
-    public TextField getUserExitDateTextField() {
-        return userExitDateTextField;
+    public String getUserExitDateTextField() {
+        return userExitDateTextField.getText();
     }
 
     public Text getActionTarget() {
@@ -170,20 +175,20 @@ public class ParkingLotView {
         return sceneTitle;
     }
 
-    public ComboBox getHourOptions1() {
-        return hourOptions1;
+    public int getHourOptions1() {
+        return Integer.parseInt(hourOptions1.getValue().toString());
     }
 
-    public ComboBox getMinuteOptions1() {
-        return minuteOptions1;
+    public int getMinuteOptions1() {
+        return Integer.parseInt(minuteOptions1.getValue().toString());
     }
 
-    public ComboBox getHourOptions2() {
-        return hourOptions2;
+    public int getHourOptions2() {
+        return Integer.parseInt(hourOptions2.getValue().toString());
     }
 
-    public ComboBox getMinuteOptions2() {
-        return minuteOptions2;
+    public int getMinuteOptions2() {
+        return Integer.parseInt(minuteOptions2.getValue().toString());
     }
 
     public Button getCalculateButton() {
