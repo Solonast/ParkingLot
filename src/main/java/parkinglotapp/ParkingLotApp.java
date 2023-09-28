@@ -9,8 +9,9 @@ public class ParkingLotApp extends Application {
     @Override
     public void start(Stage stage) {
         ParkingLotView parkingLotView = new ParkingLotView();
-        IParkingLot iParkingLot = new ParkingLot();
-        ParkingLotController parkingLotController = new ParkingLotController(iParkingLot,parkingLotView);
+
+        ParkingLotController parkingLotController = new ParkingLotController(parkingLotView);
+        parkingLotController.handleRadioButtons();
         parkingLotController.handleCalculateButton();
         parkingLotView.openWindow(stage);
 

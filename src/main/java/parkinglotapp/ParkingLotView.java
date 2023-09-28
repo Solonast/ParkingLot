@@ -26,6 +26,7 @@ public class ParkingLotView {
     private RadioButton r2;
     private RadioButton r3;
     private Button calculateButton;
+    private ToggleGroup tg;
 
     public ParkingLotView() {
         initialiseUIComponents();
@@ -43,9 +44,12 @@ public class ParkingLotView {
         hourOptions2 = new ComboBox<>();
         minuteOptions2 = new ComboBox<>();
         calculateButton = new Button("calculate");
+        tg = new ToggleGroup();
         r1 = new RadioButton("General Parking");
+        r1.setSelected(true);
         r2 = new RadioButton("Discounted Parking");
         r3 = new RadioButton(" Long Term Parking");
+
     }
 
     public GridPane initialiseLayout() {
@@ -91,7 +95,6 @@ public class ParkingLotView {
         grid.add(calculateButton, 3, 4);
         grid.add(actionTarget,0,5);
 
-        final ToggleGroup tg = new ToggleGroup();
         r1.setToggleGroup(tg);
         r2.setToggleGroup(tg);
         r3.setToggleGroup(tg);
@@ -156,5 +159,17 @@ public class ParkingLotView {
 
     public Button getCalculateButton() {
         return calculateButton;
+    }
+
+    public RadioButton getR1() {
+        return r1;
+    }
+
+    public RadioButton getR2() {
+        return r2;
+    }
+
+    public RadioButton getR3() {
+        return r3;
     }
 }

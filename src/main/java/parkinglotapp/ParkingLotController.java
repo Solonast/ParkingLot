@@ -6,9 +6,9 @@ public class ParkingLotController {
     IParkingLot iParkingLot;
     ITicket iTicket;
     ParkingLotView parkingLotView;
+    ParkingLotFactory parkingLotFactory = new ParkingLotFactory();
 
-    public ParkingLotController(IParkingLot iParkingLot, ParkingLotView parkingLotView) {
-        this.iParkingLot = iParkingLot;
+    public ParkingLotController(ParkingLotView parkingLotView) {
         this.parkingLotView = parkingLotView;
     }
 
@@ -36,5 +36,18 @@ public class ParkingLotController {
                 parkingLotView.getActionTarget().setText("Invalid input!");
             }
         });
+    }
+
+    public void handleRadioButtons(){
+        parkingLotView.getR1().setOnAction(e->{
+            iParkingLot = parkingLotFactory.createParkingLot("General Parking");
+        });
+        parkingLotView.getR2().setOnAction(e->{
+            iParkingLot = parkingLotFactory.createParkingLot("Discounted Parking");
+        });
+        parkingLotView.getR3().setOnAction(e->{
+            iParkingLot = parkingLotFactory.createParkingLot("Long Term Parking");
+        });
+
     }
 }
