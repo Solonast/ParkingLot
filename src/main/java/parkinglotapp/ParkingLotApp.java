@@ -8,5 +8,6 @@ public class ParkingLotApp extends Application {
     @Override
     public void start(Stage stage){
 
+
     }
 }
