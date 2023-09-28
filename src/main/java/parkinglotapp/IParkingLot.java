@@ -4,5 +4,5 @@ import java.time.LocalDateTime;
 
 public interface IParkingLot {
 
-    public double calculatePrice(ITicket ticket);
+    public double calculatePrice(ITicket ticket) throws TimeTravellerException;
 }
